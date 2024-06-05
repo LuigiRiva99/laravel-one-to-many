@@ -24,12 +24,32 @@
             </div>
 
             <div class="mb-3">
+                <label for="type_id" class="form-label">Titolo</label>
+                <select class="form-control" name="type_id" id="type_id">
+                    <option value="">Select type</option>
+                    @foreach($types as $type) 
+                        <option value="{{ $type->id }}"> {{ $type->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="mb-3">
                 <label for="link" class="form-label">Link</label>
                 <input type="text" name="link" class="form-control" id="link" placeholder="link">
             </div>
 
             <button class="btn btn-primary">Add changes</button>
         </form>
+
+        @if ($errors->any())
+            <div class="alert alert-danger mt-3">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     </div>
   </section>
 </main>

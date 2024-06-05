@@ -24,7 +24,7 @@
                             <td>{{$project->id}}</td>
                             <td>{{$project->title}}</td>
                             <td>{{$project->description}}</td>
-                            <td>{{$project->type->name}}</td>
+                            <td>{{optional($project->type)->name}}</td>
                             <td>{{$project->link}}</td>
                         </tr>    
                     </tbody>

@@ -28,7 +28,7 @@
                             <td>{{$project->id}}</td>
                             <td><a href="{{route('admin.projects.show', $project)}}"> {{$project->title}} </a></td>
                             <td>{{$project->description}}</td>
-                            <td>{{$project->type->name}}</td>
+                            <td>{{optional($project->type)->name}}</td>
                             <td>{{$project->link}}</td>
                             <td><a class="btn btn-primary" href="{{route('admin.projects.show', $project)}}">details </a></td>
                     @endforeach
