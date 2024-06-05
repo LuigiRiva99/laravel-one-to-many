@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreProjectRequest;
+use App\Http\Requests\UpdateProjectRequest;
 
 class ProjectController extends Controller
 {
@@ -32,14 +34,14 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProjectRequest $request)
     {
 
-        $request->validate([
-            'title' => 'required|max:150|string',
-            'description' => 'nullable|string',
-            'type_id' => 'nullable|exists:types,id'
-        ]);
+        // $request->validate([
+        //     'title' => 'required|max:150|string',
+        //     'description' => 'nullable|string',
+        //     'type_id' => 'nullable|exists:types,id'
+        // ]);
         
         $data = $request->all();
 
@@ -69,14 +71,14 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Project $project)
+    public function update(UpdateProjectRequest $request, Project $project)
     {
 
-        $request->validate([
-            'title' => 'required|max:150|string',
-            'description' => 'nullable|string',
-            'type_id' => 'nullable|exists:types,id'
-        ]);
+        // $request->validate([
+        //     'title' => 'required|max:150|string',
+        //     'description' => 'nullable|string',
+        //     'type_id' => 'nullable|exists:types,id'
+        // ]);
 
         $data = $request->all();
 
