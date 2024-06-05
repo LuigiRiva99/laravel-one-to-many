@@ -14,7 +14,8 @@
                     <tr>
                         <th>ID</th>
                         <th>Title</th>
-                        <th>Slug</th>
+                        <th>Description</th>
+                        <th>Type</th>
                         <th>content</th>
                     </tr>
                     </thead>
@@ -23,6 +24,7 @@
                             <td>{{$project->id}}</td>
                             <td>{{$project->title}}</td>
                             <td>{{$project->description}}</td>
+                            <td>{{$project->type->name}}</td>
                             <td>{{$project->link}}</td>
                         </tr>    
                     </tbody>
