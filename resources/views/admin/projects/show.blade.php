@@ -70,6 +70,23 @@
                     </div>
 
                 </div>
+
+                @if($project->type)
+                    <div class="container mt-4">
+                        <h4><strong>Related projects</strong></h4>
+                        
+                        @foreach($project->type->projects as $related_project)
+                            {{-- controllo per non mostrare il progetto corrente --}}
+                            @if($related_project->id !== $project->id)
+                                <div>
+                                    <h3><a href="{{ route('admin.projects.show',$related_project) }}">
+                                        {{ $related_project->title }}  
+                                    </a></h3>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                @endif
             </div>
         </section>
     </main>
