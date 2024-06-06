@@ -31,6 +31,16 @@
                             <td>{{optional($project->type)->name}}</td>
                             <td>{{$project->link}}</td>
                             <td><a class="btn btn-primary" href="{{route('admin.projects.show', $project)}}">details </a></td>
+                            <td>
+                                <form class="delete-project" action="{{ route('admin.projects.destroy',$project) }}" method="POST">
+
+                                            
+                                    @method('DELETE')
+                                    @csrf
+                    
+                                    <button class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
                     @endforeach
                     </tbody>
                 </table>

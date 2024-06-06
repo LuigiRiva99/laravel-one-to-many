@@ -29,8 +29,16 @@
                         </tr>    
                     </tbody>
                 </table>
-                <div>
+                <div class="d-flex justify-content-between">
                     <a class="btn btn-info" href="{{ route('admin.projects.edit', $project) }}">Edit</a>
+                    <form class="delete-project" action="{{ route('admin.projects.destroy',$project) }}" method="POST">
+
+                                            
+                        @method('DELETE')
+                        @csrf
+        
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
                 </div>
             </div>
         </section>

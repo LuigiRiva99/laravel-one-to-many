@@ -40,6 +40,14 @@
 
             <button class="btn btn-primary">Add changes</button>
         </form>
+        <form class="delete-project mt-3" action="{{ route('admin.projects.destroy',$project) }}" method="POST">
+
+                                            
+            @method('DELETE')
+            @csrf
+
+            <button class="btn btn-danger">Delete</button>
+        </form>
 
         @if ($errors->any())
             <div class="alert alert-danger mt-3">
