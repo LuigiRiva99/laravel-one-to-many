@@ -16,7 +16,7 @@
                         <th>Title</th>
                         <th>Description</th>
                         <th>Type</th>
-                        <th>content</th>
+                        <th>Link</th>
                     </tr>
                     </thead>
                     <tbody  class="table-group-divider table-hover table-striped">

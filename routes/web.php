@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\GuestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,12 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//guests
+Route::get('/guests/projects', [GuestController::class, 'index'])->name('guests.projects.index');
+Route::get('/guests/projects/{project}', [GuestController::class, 'show'])->name('guests.projects.show');
 
 
 
+//admin
 Route::middleware(['auth', 'verified'])
     
     ->name('admin.')
